@@ -15,11 +15,8 @@ class DockingStation
   end
 
   def return_bike(bike_name)
-    if @bike_rack.length > 0
-      raise 'Station full'
-    else
-      @bike_rack << (bike_name)
-    end
+    raise 'Station full' if @bike_rack.length > 0
+    @bike_rack << (bike_name)
   end
 
   attr_reader :bike_rack
