@@ -23,10 +23,5 @@ describe DockingStation do
       expect(@station.return_bike(@bike)).to eq([@bike])
       expect(@station.bike_rack).to eq ([@bike])
     end
-
-    it "reads array of stored bikes" do
-
-    end
-
   end
 end
