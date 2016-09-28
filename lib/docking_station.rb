@@ -1,12 +1,17 @@
-require './lib/bike'
+
 class DockingStation
 
   def initialize
     @bike_rack = []
+    bike = Bike.new
   end
 
   def release_bike
-    Bike.new
+    if @bike_rack != []
+    	@bike_rack.shift
+    else 
+    	raise 'Unable to dispense bikes as none available' 
+    end 
   end
 
   def return_bike(bike_name)

@@ -1,9 +1,10 @@
 require 'docking_station'
+require 'bike'
 
 describe DockingStation do
   before :each do
     @station = DockingStation.new
-    @bike = @station.release_bike
+    @bike = Bike.new
   end
 
   it "should get a bike" do
@@ -27,7 +28,7 @@ describe DockingStation do
 
   describe 'Should raise an exception' do
     it "raises an exception when bike rack is empty" do
-      expect {@station.release_bike}.to raise_error
+      expect {@station.release_bike}.to raise_error('Unable to dispense bikes as none available')
     end 
   end
 end
