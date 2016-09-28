@@ -3,7 +3,6 @@ class DockingStation
 
   def initialize
     @bike_rack = []
-    bike = Bike.new
   end
 
   def release_bike
@@ -15,7 +14,7 @@ class DockingStation
   end
 
   def return_bike(bike_name)
-    raise 'Station full' if @bike_rack.length > 0
+    raise 'Station full' if @bike_rack.length > 19
     @bike_rack << (bike_name)
   end
 

@@ -31,10 +31,15 @@ describe DockingStation do
     it "raises an exception when bike rack is empty" do
       expect {@station.release_bike}.to raise_error('Unable to dispense bikes as none available')
     end
+  end
 
-    it "raises an exception when bike rack is full, on return" do
-      @station.return_bike(@bike)
-      expect {@station.return_bike(@bike2)}.to raise_error('Station full')
+  describe 'Should allow adding no more than 20 bikes' do
+    it "Allows adding 20 bikes" do
+      expect(20.times{@station.return_bike Bike.new}).to eq 20
+    end
+
+    it "Does not allow adding 21 bikes" do
+      expect {(21.times{@station.return_bike Bike.new})}.to raise_error('Station full')
     end
   end
 end
