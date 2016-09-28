@@ -24,4 +24,10 @@ describe DockingStation do
       expect(@station.bike_rack).to eq ([@bike])
     end
   end
+
+  describe 'Should raise an exception' do
+    it "raises an exception when bike rack is empty" do
+      expect {@station.release_bike}.to raise_error
+    end 
+  end
 end
