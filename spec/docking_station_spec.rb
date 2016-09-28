@@ -1,4 +1,5 @@
 require 'docking_station'
+
 describe DockingStation do
   before :each do
     @station = DockingStation.new
@@ -10,6 +11,7 @@ describe DockingStation do
   end
 
   it "should get a working bike" do
-    expect(@bike).to respond_to :working?
+    expect(@bike).not_to be_working
   end
+
 end
