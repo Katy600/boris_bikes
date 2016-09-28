@@ -5,7 +5,6 @@ describe DockingStation do
   before :each do
     @station = DockingStation.new
     @bike = Bike.new
-    @bike2 = Bike.new
   end
 
   it "should get a bike" do
