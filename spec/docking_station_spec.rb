@@ -72,7 +72,8 @@ describe DockingStation do
 
 
 	it "return an error when docking stations are 20" do
-		20.times { subject.dock Bike.new }
+		stub_const("DEFAULT_CAPACITY", 20)
+		DEFAULT_CAPACITY.times { subject.dock Bike.new }
 		expect { subject.dock Bike.new }.to raise_error "Docking Stations are full"
 	end
 
