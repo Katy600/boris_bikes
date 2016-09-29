@@ -1,23 +1,19 @@
 
+require_relative 'bike'
+
 class DockingStation
 
-  def initialize
-    @bike_rack = []
-  end
+  attr_reader :bikes
 
-  def release_bike
-    if @bike_rack != []
-    	@bike_rack.shift
-    else
-    	raise 'Unable to dispense bikes as none available'
-    end
-  end
+	def release_bike
+		 fail "NO BIKES!" unless @bikes
+		 Bike.new
+		#bike.working? == true
+	end
 
-  def return_bike(bike_name)
-    raise 'Station full' if @bike_rack.length > 19
-    @bike_rack << (bike_name)
-  end
-
-  attr_reader :bike_rack
+	def dock(bike)
+		fail "Docking Stations are full" unless (@bikes == nil)
+		@bikes = bike
+	end
 
 end

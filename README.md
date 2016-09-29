@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Boris Bikes
 
 ##Overview
@@ -14,3 +15,6 @@ Boris bikes are public bikes around London that can be hired to ride around.
 8. Back to the unit
 9. Building a bike
 10. Making Docking Stations get Bikes
+=======
+This is the Boris Bikes Challenge for Week One of the Makers Academy Course
+>>>>>>> a139791e0f60490350bf2d5da4489dccc8341af6
