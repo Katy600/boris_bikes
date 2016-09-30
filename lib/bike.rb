@@ -1,5 +1,10 @@
- class Bike
+class Bike
+
+   def initialize (bike = true)
+     @bike_state = bike
+   end
+
   def working?
-    true
+    @bike_state
   end
-end 
+end
